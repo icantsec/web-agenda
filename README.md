@@ -13,3 +13,7 @@ Designed to run on a raspberry pi with a touchscreen monitor, but can be used on
 ![image](https://github.com/icantsec/web-agenda/assets/128331200/077e454a-c6ff-4099-b4dd-e15faa0e9ce0)
 ![image](https://github.com/icantsec/web-agenda/assets/128331200/780a6edf-9ec0-407d-80e3-9355e33b7ab7)
 
+
+For google integration, you will need a google calendar api key, obtained by creating a project here: https://console.developers.google.com/project (guide coming soonTM)
+
+
