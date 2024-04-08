@@ -1,4 +1,4 @@
-const googleClientID = "google_api_client_id_here";
+const googleClientID = "YOUR GOOGLE API CLIENT ID HERE";
 const timeToExpiry = 1000*60*60*24;//1 day in ms
 
 function processTokenResponse(tokenResponse) {
