@@ -1,0 +1,397 @@
+* {
+	font-family: "Tauri", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+body {
+    
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 50vh;
+}
+
+#navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#navigation button {
+    background-color: #ddd;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.openSignIn {
+	font-size: 30px;
+	position: fixed;
+	bottom: 20px;
+	right: 30px;
+}
+.openCreateEvent {
+	font-size: 30px;
+	position: fixed;
+	bottom: 20px;
+	left: 30px;
+}
+
+.week-agenda {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    flex-grow: 1;
+}
+
+.day {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.day h2 {
+    color: #333;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.currentDay h2 {
+    color: #27b7e3;
+}
+
+.currentDay {
+	border: 1px solid #27b7e3;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    background-color: #f9f9f9;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+ul hr {
+	color: #f9f9f9;
+	height: 1px;
+}
+
+.hidden {
+	display: none !important;
+}
+
+
+#signInContainer,#createEventContainer {
+	z-index: 2;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.signContainerBackground {
+	z-index: 1;
+	background-color: rgba(0, 0, 0, .2);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.signInOptions {
+	z-index: 2;
+	margin: 150px auto;
+	width: 950px;
+	font-size: 20px;
+	height: 600px;
+	border-radius: 10px;
+	background: white;
+	position: relative;
+	transition: all 0.3s 0s ease-in-out;
+	text-align: center;
+	padding: 15px 15px 15px 15px;
+}
+.createEvent {
+	z-index: 2;
+	margin: 150px auto;
+	width: 950px;
+	font-size: 20px;
+	height: 600px;
+	border-radius: 10px;
+	background: white;
+	position: relative;
+	transition: all 0.3s 0s ease-in-out;
+	text-align: center;
+	padding: 15px 15px 15px 15px;
+}
+
+
+.button {
+	padding: 15px 25px 15px 25px;
+	background-color: rgba(25, 50, 250, .5);
+	color: white;
+	border-radius: 10px;
+	text-align: center;
+	width: fit-content;
+	margin: auto;
+}
+
+
+.eventBox {
+	z-index: 2;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.eventBoxContainer {
+	z-index: 1;
+	background-color: rgba(0, 0, 0, .3);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+.eventBoxContent {
+	z-index: 3;
+	position: relative;
+	top: 150px;
+	width: 900px;
+	margin: auto;
+	background-color: white;
+	border-radius: 10px;
+	padding: 15px 15px 15px 15px;
+	text-align: center;
+	font-size: 30px;
+}
+
+
+.checked {
+	text-decoration: line-through;
+	color: green;
+}
+
+.eventBoxContent .header {
+	margin: auto;
+	width: 100%;
+	display: flex;
+	border-bottom: 1px solid black;
+}
+.eventBoxContent .header span {
+	width: 100%;
+	font-size: 45px;
+	flex: 1;
+}
+
+.eventBoxContent div {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.eventBoxContent .timeLocCombo {
+	display: flex;
+}
+.eventBoxContent .timeLocCombo div {
+	flex: 1;
+}
+
+.eventBoxContent .detailBox {
+	text-align: left;
+	margin-left: 50px;
+}
+.eventBoxContent .detailBox .boxIcon {
+	font-size: 30px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	text-decoration: underline;
+}
+.eventBoxContent .detailBox span {
+	background-color: rgba(0, 0, 0, .1);
+	font-size: 20px;
+	width: 200px;
+	padding: 10px 10px 10px 10px;
+	margin-top: 0px;
+}
+
+.eventBoxContent .type {
+	font-size: 20px;
+	text-align: right;
+}
+
+/*calendar popup*/
+
+
+body {
+	background: #f7f6f3;
+	font-family: 'Lato';
+}
+
+.caltainer {
+	z-index: 2;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+.caltainer-background {
+	z-index: 1;
+	background-color: rgba(0, 0, 0, .2);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.date-picker {
+	z-index: 2;
+	margin: 150px auto;
+	width: 950px;
+	font-size: 40px;
+	height: auto;
+	font-weight: bold;
+	background: white;
+	position: relative;
+	transition: all 0.3s 0s ease-in-out;
+}
+
+.date-picker .calendar {
+	position: relative;
+	width: 100%;
+	background: #fff;
+	border-radius: 0px;
+}
+
+.date-picker .calendar .ui-datepicker-inline {
+	position: relative;
+	width: 100%;
+}
+
+.date-picker .calendar .ui-datepicker-header {
+	height: 100%;
+	line-height: 75px;
+	background: #8392A7;
+	color: #fff;
+	margin-bottom: 10px;
+}
+
+.date-picker .calendar .ui-datepicker-title {
+	text-align: center;
+}
+
+.date-picker .calendar .ui-datepicker-calendar {
+	width: 100%;
+	text-align: center;
+}
+
+.date-picker .calendar .ui-datepicker-calendar thead tr th span {
+	display: block;
+	width: 100%;
+	color: #8392A7;
+	margin-bottom: 5px;
+	font-size: 25px;
+}
+
+.date-picker .calendar .ui-datepicker-calendar tr td a {
+	height: 75px;
+	line-height: 75px;
+	text-align: center;
+}
+
+.date-picker .calendar .ui-state-default {
+	display: block;
+	text-decoration: none;
+	color: #b5b5b5;
+	line-height: 40px;
+	font-size: 25px;
+}
+
+.date-picker .calendar .ui-state-default:hover {
+	background: rgba(0, 0, 0, 0.02);
+}
+
+.date-picker .calendar .ui-state-highlight {
+	color: #68768A;
+}
+
+.date-picker .calendar .ui-state-active {
+	color: #68768A;
+	background-color: rgba(131, 146, 167, 0.12);
+	font-weight: 600;
+	border: 2px solid #27b7e3;
+}
+
+.date-picker .calendar .ui-datepicker-unselectable .ui-state-default {
+	color: #eee;
+	border: 2px solid transparent;
+}
+
+.date-picker.open {
+	max-height: 600px;
+}
+
+.date-picker.open .input button {
+	background: #68768A;
+}
+
+
+/**
+	Prev, Next for Popup Calendar
+**/
+
+.date-picker .calendar .ui-datepicker-prev,
+.date-picker .calendar .ui-datepicker-next {
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	margin-top: 15px;
+	text-align: center;
+	font-size: 40px;
+	line-height: 50px;
+	text-align: center;
+}
+
+
+.date-picker .calendar .ui-datepicker-prev {
+	float: left;
+	margin-left: 50px;
+}
+.date-picker .calendar .ui-datepicker-next {
+	float: right;
+	margin-right: 50px;
+}
+
+.date-picker .calendar .ui-datepicker-prev:hover,
+.date-picker .calendar .ui-datepicker-next:hover,
+.date-picker .calendar .ui-datepicker-prev:hover:after,
+.date-picker .calendar .ui-datepicker-next:hover:after {
+	border-color: #68768A;
+}
+
+

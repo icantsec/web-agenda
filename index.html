@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Agenda</title>
+    <link rel="stylesheet" href="styles.css">
+	<script src="jquery.js"></script>
+	<script src="jquery-ui.js"></script>
+	<script src="YOUR FONTAWESOME ACCESS HERE (I USE A KIT)" crossorigin="anonymous"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tauri&display=swap" rel="stylesheet">
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+
+</head>
+<body>
+	<div id="navigation">
+        <button id="prevWeek">&lt;</button>
+		<h1 id="dateRange">Click to choose a date</h1>
+        <button id="nextWeek">&gt;</button>
+    </div>
+    
+	<div class="caltainer hidden">
+		<div class="caltainer-background"></div>
+		<div class="date-picker open">
+			<div class="calendar"></div>
+		</div>
+	</div>
+
+	<div class="openSignIn" onclick="toggleSignIn()">
+		<i class="fa-regular fa-user"></i>
+	</div>
+	
+	<div class="openCreateEvent" onclick="toggleCreateEvent()">
+		<i class="fa-regular fa-calendar-plus"></i>
+	</div>
+
+	<div id="signInContainer" class="hidden">
+		<div class="signContainerBackground" onclick="toggleSignIn()"></div>
+		<div class="signInOptions">
+			<h2>Authorize Google Calendar to Import Events</h2>
+			<div class="button" onclick="">
+				<div id="g_id_onload"
+					 data-client_id="YOUR GOOGLE API CLIENT ID HERE"
+					 data-callback="handleCredentialResponse"
+					 >
+				</div>
+				<div class="g_id_signin"
+					 data-type="standard"
+					 data-shape="rectangular"
+					 data-theme="outline"
+					 data-text="sign_in_with"
+					 data-size="large"
+					 data-logo_alignment="left">
+				</div>
+				</div>
+		</div>
+	</div>
+	
+	<div id="createEventContainer" class="hidden">
+		<div class="signContainerBackground" onclick="toggleCreateEvent()"></div>
+		<div class="createEvent">
+			<h2>Add New Event</h2>
+			<!--	Name, start time, end time, location, description (), type (dropdown: task, event, skip repeat for now)	-->
+			<div class="button" onclick=""></div>
+		</div>
+	</div>
+
+
+  </div>
+    <div class="week-agenda">
+        <div class="day" id="sunday">
+            <h2>Sunday <span class="date"></span></h2>
+            <ul>
+			</ul>
+        </div>
+        <div class="day" id="monday">
+            <h2>Monday <span class="date"></span></h2>
+            <ul></ul>
+        </div>
+        <div class="day" id="tuesday">
+            <h2>Tuesday <span class="date"></span></h2>
+            <ul></ul>
+        </div>
+        <div class="day" id="wednesday">
+            <h2>Wednesday <span class="date"></span></h2>
+            <ul></ul>
+        </div>
+        <div class="day" id="thursday">
+            <h2>Thursday <span class="date"></span></h2>
+            <ul></ul>
+        </div>
+        <div class="day" id="friday">
+            <h2>Friday <span class="date"></span></h2>
+            <ul></ul>
+        </div>
+        <div class="day" id="saturday">
+            <h2>Saturday <span class="date"></span></h2>
+            <ul></ul>
+        </div>
+    </div>
+	<script src="keystore.js"></script>
+	<script src="gcal.js"></script>
+    <script src="script.js"></script>
+	<script src="calendar.js"></script>
+	
+</body>
+</html>
